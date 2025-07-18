@@ -8,4 +8,6 @@ resource "vercel_project_domain" "production" {
 resource "vercel_project_domain" "preview" {
   project_id = vercel_project.portfolio.id
   domain     = "staging.mervinhemaraju.com"
+
+  git_branch = "preview"
 }
