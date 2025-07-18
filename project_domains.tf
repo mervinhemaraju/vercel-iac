@@ -2,8 +2,6 @@ resource "vercel_project_domain" "production" {
   project_id = vercel_project.portfolio.id
   domain     = "mervinhemaraju.com"
   #   team_id    = var.team_id
-
-  git_branch = "main"
 }
 
 # Preview domain - assigned to all other branches (preview deployments)
