@@ -1,4 +1,3 @@
-
 # The portfolio project.
 module "portfolio" {
   source                       = "./module"

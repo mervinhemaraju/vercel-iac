@@ -2,6 +2,11 @@
 resource "vercel_project" "this" {
   name = var.project_name
 
+  git_repository = {
+    type = "github"
+    repo = "mervinhemaraju/${var.project_name}"
+  }
+
   vercel_authentication = {
     deployment_type = var.vercel_authentication
   }
