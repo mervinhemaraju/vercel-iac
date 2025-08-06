@@ -2,6 +2,8 @@
 resource "vercel_project" "this" {
   name = var.project_name
 
+  skew_protection = true
+
   git_repository = {
     type = "github"
     repo = "mervinhemaraju/${var.project_name}"
