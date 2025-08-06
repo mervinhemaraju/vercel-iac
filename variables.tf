@@ -7,7 +7,7 @@ variable "region" {
   default     = "eu-west-1"
 }
 
-variable "token_doppler_iac_cloud_main" {
+variable "token_doppler_global" {
   type        = string
   description = "The token for secrets manager Doppler main project."
 }
