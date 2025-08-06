@@ -6,7 +6,7 @@ variable "project_name" {
 variable "vercel_authentication" {
   description = "Vercel authentication type"
   type        = string
-  default     = "all_except_custom_domains"
+  default     = "standard_protection"
 }
 
 variable "preview_branch" {
