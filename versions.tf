@@ -13,7 +13,7 @@ terraform {
 
     vercel = {
       source  = "vercel/vercel"
-      version = "~> 3.8"
+      version = "~> 3.12"
     }
 
     cloudflare = {
