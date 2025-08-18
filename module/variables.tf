@@ -34,3 +34,9 @@ variable "preview_custom_top_domain" {
   description = "The top domain (subdomain) for the preview environment"
   type        = string
 }
+
+variable "add_root_redirect" {
+  description = "Whether to enable the root domain to redirect to the production environment of this project."
+  type        = bool
+  default     = false
+}

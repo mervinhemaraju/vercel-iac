@@ -6,4 +6,5 @@ module "portfolio" {
   production_custom_domain     = "mervinhemaraju.com"
   preview_custom_top_domain    = "staging"
   preview_custom_domain        = "mervinhemaraju.com"
+  add_root_redirect            = true
 }
