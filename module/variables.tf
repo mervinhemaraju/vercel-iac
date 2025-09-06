@@ -3,6 +3,18 @@ variable "project_name" {
   type        = string
 }
 
+variable "framework" {
+  description = "Framework used for the Vercel project"
+  type        = string
+  default     = null
+}
+
+variable "node_version" {
+  description = "Node.js version for the Vercel project"
+  type        = string
+  default     = null
+}
+
 variable "vercel_authentication" {
   description = "Vercel authentication type"
   type        = string
@@ -15,28 +27,28 @@ variable "preview_branch" {
   default     = "staging"
 }
 
-variable "production_custom_domain" {
-  description = "The custom domain for the production environment"
-  type        = string
+variable "production_domains" {
+  description = "List of production domains"
+  type = list(object({
+    top_domain = string
+    domain     = string
+  }))
+
+  default = []
 }
 
-variable "production_custom_top_domain" {
-  description = "The top domain (subdomain) for the production environment"
-  type        = string
+variable "preview_domains" {
+  description = "List of preview domains"
+  type = list(object({
+    top_domain = string
+    domain     = string
+  }))
+
+  default = []
 }
 
-variable "preview_custom_domain" {
-  description = "The custom domain for the preview environment"
+variable "protection_bypass_for_automation_secret" {
+  description = "A secret that can be used to bypass vercel authentication in automations."
   type        = string
-}
-
-variable "preview_custom_top_domain" {
-  description = "The top domain (subdomain) for the preview environment"
-  type        = string
-}
-
-variable "add_root_redirect" {
-  description = "Whether to enable the root domain to redirect to the production environment of this project."
-  type        = bool
-  default     = false
+  default     = null
 }

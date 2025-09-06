@@ -33,13 +33,14 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_framework"></a> [framework](#input\_framework) | Framework used for the Vercel project | `string` | `null` | no |
+| <a name="input_node_version"></a> [node\_version](#input\_node\_version) | Node.js version for the Vercel project | `string` | `null` | no |
 | <a name="input_preview_branch"></a> [preview\_branch](#input\_preview\_branch) | The branch to use for the preview environment | `string` | `"staging"` | no |
-| <a name="input_preview_custom_domain"></a> [preview\_custom\_domain](#input\_preview\_custom\_domain) | The custom domain for the preview environment | `string` | n/a | yes |
-| <a name="input_preview_custom_top_domain"></a> [preview\_custom\_top\_domain](#input\_preview\_custom\_top\_domain) | The top domain (subdomain) for the preview environment | `string` | n/a | yes |
-| <a name="input_production_custom_domain"></a> [production\_custom\_domain](#input\_production\_custom\_domain) | The custom domain for the production environment | `string` | n/a | yes |
-| <a name="input_production_custom_top_domain"></a> [production\_custom\_top\_domain](#input\_production\_custom\_top\_domain) | The top domain (subdomain) for the production environment | `string` | n/a | yes |
+| <a name="input_preview_domains"></a> [preview\_domains](#input\_preview\_domains) | List of preview domains | <pre>list(object({<br/>    top_domain = string<br/>    domain     = string<br/>  }))</pre> | `[]` | no |
+| <a name="input_production_domains"></a> [production\_domains](#input\_production\_domains) | List of production domains | <pre>list(object({<br/>    top_domain = string<br/>    domain     = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Name of the Vercel project | `string` | n/a | yes |
-| <a name="input_vercel_authentication"></a> [vercel\_authentication](#input\_vercel\_authentication) | Vercel authentication type | `string` | `"none"` | no |
+| <a name="input_protection_bypass_for_automation_secret"></a> [protection\_bypass\_for\_automation\_secret](#input\_protection\_bypass\_for\_automation\_secret) | A secret that can be used to bypass vercel authentication in automations. | `string` | `null` | no |
+| <a name="input_vercel_authentication"></a> [vercel\_authentication](#input\_vercel\_authentication) | Vercel authentication type | `string` | `"standard_protection_new"` | no |
 
 ## Outputs
 
