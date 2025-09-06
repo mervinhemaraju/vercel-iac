@@ -11,7 +11,7 @@ module "portfolio" {
       domain     = "mervinhemaraju.com"
     },
     {
-      top_domain = "@"
+      top_domain = "mervinhemaraju.com"
       domain     = "mervinhemaraju.com"
     }
   ]

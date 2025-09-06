@@ -25,7 +25,7 @@ resource "vercel_project_domain" "production" {
   }
 
   project_id = vercel_project.this.id
-  domain     = each.value.top_domain == "@" ? each.value.domain : each.key
+  domain     = each.value.top_domain == each.value.domain ? each.value.domain : each.key
 }
 
 # Production domain (no custom environment needed)
@@ -35,6 +35,6 @@ resource "vercel_project_domain" "preview" {
   }
 
   project_id = vercel_project.this.id
-  domain     = each.value.top_domain == "@" ? each.value.domain : each.key
+  domain     = each.value.top_domain == each.value.domain ? each.value.domain : each.key
   git_branch = var.preview_branch
 }
