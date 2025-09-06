@@ -9,6 +9,10 @@ module "portfolio" {
     {
       top_domain = "www"
       domain     = "mervinhemaraju.com"
+    },
+    {
+      top_domain = "mervinhemaraju.com"
+      domain     = "mervinhemaraju.com"
     }
   ]
 
