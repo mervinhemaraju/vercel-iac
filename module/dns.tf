@@ -39,7 +39,8 @@ resource "cloudflare_dns_record" "production" {
   }
 
   zone_id = data.cloudflare_zones.zones[each.value.domain].result[0].id
-  name    = "${each.value.top_domain}.${each.value.domain}"
+  # name    = "${each.value.top_domain}.${each.value.domain}"
+  name    = each.value.top_domain
   ttl     = 1
   type    = "CNAME"
   comment = local.cf_dns_record_comment
@@ -54,7 +55,8 @@ resource "cloudflare_dns_record" "preview" {
   }
 
   zone_id = data.cloudflare_zones.zones[each.value.domain].result[0].id
-  name    = "${each.value.top_domain}.${each.value.domain}"
+  # name    = "${each.value.top_domain}.${each.value.domain}"
+  name    = each.value.top_domain
   ttl     = 1
   type    = "CNAME"
   comment = local.cf_dns_record_comment
