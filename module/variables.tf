@@ -3,6 +3,12 @@ variable "project_name" {
   type        = string
 }
 
+variable "github_repo" {
+  description = "The GitHub repository for the Vercel project"
+  type        = string
+  default     = null
+}
+
 variable "framework" {
   description = "Framework used for the Vercel project"
   type        = string

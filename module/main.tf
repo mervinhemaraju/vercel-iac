@@ -10,7 +10,7 @@ resource "vercel_project" "this" {
 
   git_repository = {
     type = "github"
-    repo = "mervinhemaraju/${var.project_name}"
+    repo = var.github_repo == null ? "mervinhemaraju/${var.project_name}" : var.github_repo
   }
 
   vercel_authentication = {
