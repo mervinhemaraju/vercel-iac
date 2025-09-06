@@ -39,7 +39,11 @@ resource "cloudflare_dns_record" "production" {
   }
 
   zone_id = data.cloudflare_zones.zones[each.value.domain].result[0].id
-  name    = "${each.value.top_domain}.${each.value.domain}"
+
+  # Handle root domain case: if top_domain equals domain, use just the domain
+  # Otherwise, concatenate top_domain.domain for subdomains
+  name = each.value.top_domain == each.value.domain ? each.value.domain : "${each.value.top_domain}.${each.value.domain}"
+
   ttl     = 1
   type    = "CNAME"
   comment = local.cf_dns_record_comment
@@ -54,7 +58,11 @@ resource "cloudflare_dns_record" "preview" {
   }
 
   zone_id = data.cloudflare_zones.zones[each.value.domain].result[0].id
-  name    = "${each.value.top_domain}.${each.value.domain}"
+
+  # Handle root domain case: if top_domain equals domain, use just the domain
+  # Otherwise, concatenate top_domain.domain for subdomains
+  name = each.value.top_domain == each.value.domain ? each.value.domain : "${each.value.top_domain}.${each.value.domain}"
+
   ttl     = 1
   type    = "CNAME"
   comment = local.cf_dns_record_comment
