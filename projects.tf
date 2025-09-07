@@ -41,8 +41,8 @@ module "lockme" {
 
   preview_domains = [
     {
-      top_domain = "lockme"
-      domain     = "plagueworks.qzz.io"
+      top_domain = "staging-lockme"
+      domain     = "plagueworks.org"
     }
   ]
 }
