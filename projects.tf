@@ -97,3 +97,33 @@ module "lockme" {
     }
   ]
 }
+
+# The MES project
+module "mes" {
+  source = "./module"
+
+  project_name                            = "mes"
+  protection_bypass_for_automation_secret = data.doppler_secrets.apps.map.VERCEL_BYPASS_TOKEN
+
+  production_domains = [
+    {
+      top_domain = "mesweb"
+      domain     = "plagueworks.org"
+    },
+    {
+      top_domain = "mesweb"
+      domain     = "mervinhemaraju.com"
+    },
+  ]
+
+  preview_domains = [
+    {
+      top_domain = "staging-mesweb"
+      domain     = "plagueworks.org"
+    },
+    {
+      top_domain = "staging-mesweb"
+      domain     = "mervinhemaraju.com"
+    }
+  ]
+}
