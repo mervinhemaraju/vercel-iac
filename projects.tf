@@ -107,6 +107,14 @@ module "mes" {
 
   production_domains = [
     {
+      top_domain = "mes"
+      domain     = "plagueworks.org"
+    },
+    {
+      top_domain = "mes"
+      domain     = "mervinhemaraju.com"
+    },
+    {
       top_domain = "mesweb"
       domain     = "plagueworks.org"
     },
@@ -118,11 +126,11 @@ module "mes" {
 
   preview_domains = [
     {
-      top_domain = "staging-mesweb"
+      top_domain = "staging-mes"
       domain     = "plagueworks.org"
     },
     {
-      top_domain = "staging-mesweb"
+      top_domain = "staging-mes"
       domain     = "mervinhemaraju.com"
     }
   ]
