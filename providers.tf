@@ -11,5 +11,5 @@ provider "vercel" {
 
 # * Cloudflare Provider for Infrastructure as Code
 provider "cloudflare" {
-  api_token = data.doppler_secrets.apps.map.CLOUDFLARE_TERRAFORM_TOKEN
+  api_token = data.doppler_secrets.cloudflare_creds.map.CLOUDFLARE_TERRAFORM_TOKEN
 }
